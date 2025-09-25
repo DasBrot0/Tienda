@@ -1,6 +1,4 @@
-Claro, aquí tienes tu contenido organizado y bien formateado para un archivo .md (Markdown), ideal para documentación en un repositorio GitHub, por ejemplo:
-
-# 📦 Backend - Configuración de Electron
+# 📦 Configuración de Electron
 
 ## ⚙️ Instalación de Electron
 
