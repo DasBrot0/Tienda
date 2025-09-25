@@ -18,4 +18,4 @@ npm run dev
 
 ## 🗄️ Conexión con Base de Datos
 
-⚠️ Proyecto solo Frontend-Backend, falta desplegar conexión a DB.
+⚠️ Proyecto solo Frontend-Backend y conexión a DB, falta desplegar la DB.
