@@ -1,0 +1,21 @@
+{
+  "name": "jumi-store-desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron src/main.js",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "electron-builder": "^25.1.8",
+    "oracledb": "^6.7.2"
+  },
+  "devDependencies": {
+    "electron": "^34.2.0"
+  }
+}

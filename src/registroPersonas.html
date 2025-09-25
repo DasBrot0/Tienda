@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendas Jumi - Registro de Personas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registroPersonas.html" class="active">Registro de Personas</a></li>
+                <li><a href="actualizacionPersonas.html">Actualización de datos de personas</a></li>
+            </ul>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="content">
+            <h1>Registro de Personas</h1>
+            
+            <label for="tipoPersona">Seleccionar tipo de persona:</label>
+            <select id="tipoPersona">
+                <option value="">Seleccione</option>
+                <option value="cliente">Cliente</option>
+                <option value="empleado_supervisor">Empleado - Supervisor</option>
+                <option value="empleado_vendedor">Empleado - Vendedor</option>
+            </select>
+
+            <!-- Campos de Cliente -->
+            <div id="clienteCampos" class="hidden">
+                <h2>Cliente</h2>
+                <label for="dniCliente">DNI:</label>
+                <input type="text" id="dniCliente" placeholder="Ingrese DNI" required>
+                <label for="nombresCliente">Nombres:</label>
+                <input type="text" id="nombresCliente" placeholder="Ingrese nombres" required>
+                <label for="apellidoPaternoCliente">Apellido paterno:</label>
+                <input type="text" id="apellidoPaternoCliente" placeholder="Ingrese apellido paterno" required>
+                <label for="apellidoMaternoCliente">Apellido materno:</label>
+                <input type="text" id="apellidoMaternoCliente" placeholder="Ingrese apellido materno" required>
+                <label for="correoElectronicoCliente">Correo electrónico:</label>
+                <input type="text" id="correoElectronicoCliente" placeholder="Ingrese correo electrónico" required>
+                <label for="sedeSelectCliente">Seleccionar Sede:</label>
+                <select id="sedeSelectCliente" required>
+                    <option value="">Seleccione una sede</option>
+                    <!-- Las opciones se llenarán dinámicamente aquí -->
+                </select>
+                <h3>Teléfonos</h3>
+                <div id="telefonosCliente">
+                    <input type="text" class="telefono" placeholder="Ingrese teléfono 1" required>
+                </div>
+                <button type="button" onclick="agregarTelefono('telefonosCliente')">Agregar otro teléfono</button>
+
+                <h3>Direcciones</h3>
+                <div id="direccionesCliente">
+                    <input type="text" class="direccion" placeholder="Ingrese dirección 1" required>
+                </div>
+                <button type="button" onclick="agregarDireccion('direccionesCliente')">Agregar otra dirección</button>
+            </div>
+
+            <!-- Campos de Empleado - Supervisor -->
+            <div id="empleadoSupervisorCampos" class="hidden">
+                <h2>Empleado - Supervisor</h2>
+                <label for="dniSupervisor">DNI:</label>
+                <input type="text" id="dniSupervisor" placeholder="Ingrese DNI" required>
+                <label for="nombresSupervisor">Nombres:</label>
+                <input type="text" id="nombresSupervisor" placeholder="Ingrese nombres" required>
+                <label for="apellidoPaternoSupervisor">Apellido paterno:</label>
+                <input type="text" id="apellidoPaternoSupervisor" placeholder="Ingrese apellido paterno" required>
+                <label for="apellidoMaternoSupervisor">Apellido materno:</label>
+                <input type="text" id="apellidoMaternoSupervisor" placeholder="Ingrese apellido materno" required>
+                <label for="correoElectronicoSupervisor">Correo electrónico:</label>
+                <input type="text" id="correoElectronicoSupervisor" placeholder="Ingrese correo electrónico" required>
+                <label for="sedeSelectSupervisor">Seleccionar Sede:</label>
+                <select id="sedeSelectSupervisor" required>
+                    <option value="">Seleccione una sede</option>
+                    <!-- Las opciones se llenarán dinámicamente aquí -->
+                </select>
+                <label for="fechaContratacionSupervisor">Fecha de contratación:</label>
+                <input type="date" id="fechaContratacionSupervisor">
+                <label for="salarioSupervisor">Salario:</label>
+                <input type="text" id="salarioSupervisor" placeholder="Ingrese salario">
+                <label for="areaDeSupervision">Area de supervisión:</label>
+                <input type="text" id="areaDeSupervision" placeholder="Ingrese área de supervisión">
+                <h3>Teléfonos</h3>
+                <div id="telefonosSupervisor">
+                    <input type="text" class="telefono" placeholder="Ingrese teléfono 1" required>
+                </div>
+                <button type="button" onclick="agregarTelefono('telefonosSupervisor')">Agregar otro teléfono</button>
+
+                <h3>Direcciones</h3>
+                <div id="direccionesSupervisor">
+                    <input type="text" class="direccion" placeholder="Ingrese dirección 1" required>
+                </div>
+                <button type="button" onclick="agregarDireccion('direccionesSupervisor')">Agregar otra dirección</button>
+            </div>
+
+            <!-- Campos de Empleado - Vendedor -->
+            <div id="empleadoVendedorCampos" class="hidden">
+                <h2>Empleado - Vendedor</h2>
+                <label for="dniVendedor">DNI:</label>
+                <input type="text" id="dniVendedor" placeholder="Ingrese DNI" required>
+                <label for="nombresVendedor">Nombres:</label>
+                <input type="text" id="nombresVendedor" placeholder="Ingrese nombres" required>
+                <label for="apellidoPaternoVendedor">Apellido paterno:</label>
+                <input type="text" id="apellidoPaternoVendedor" placeholder="Ingrese apellido paterno" required>
+                <label for="apellidoMaternoVendedor">Apellido materno:</label>
+                <input type="text" id="apellidoMaternoVendedor" placeholder="Ingrese apellido materno" required>
+                <label for="correoElectronicoVendedor">Correo electrónico:</label>
+                <input type="text" id="correoElectronicoVendedor" placeholder="Ingrese correo electrónico" required>
+                <label for="sedeSelectVendedor">Seleccionar Sede:</label>
+                <select id="sedeSelectVendedor" required>
+                    <option value="">Seleccione una sede</option>
+                    <!-- Las opciones se llenarán dinámicamente aquí -->
+                </select>
+                <label for="fechaContratacionVendedor">Fecha de contratación:</label>
+                <input type="date" id="fechaContratacionVendedor">
+                <label for="salarioVendedor">Salario:</label>
+                <input type="text" id="salarioVendedor" placeholder="Ingrese salario">
+                <label for="comisionVendedor">Comisión:</label>
+                <input type="text" id="comisionVendedor" placeholder="Ingrese comisión">
+                <label for="dniSupervisorVendedor">DNI del Supervisor:</label>
+                <input type="text" id="dniSupervisorVendedor" placeholder="Ingrese DNI del supervisor">
+                <h3>Teléfonos</h3>
+                <div id="telefonosVendedor">
+                    <input type="text" class="telefono" placeholder="Ingrese teléfono 1" required>
+                </div>
+                <button type="button" onclick="agregarTelefono('telefonosVendedor')">Agregar otro teléfono</button>
+
+                <h3>Direcciones</h3>
+                <div id="direccionesVendedor">
+                    <input type="text" class="direccion" placeholder="Ingrese dirección 1" required>
+                </div>
+                <button type="button" onclick="agregarDireccion('direccionesVendedor')">Agregar otra dirección</button>
+            </div>
+
+            <button id="registrarButton" type="button">Registrar</button>
+
+            <div id="error" class="error"></div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+    <script>
+        // Función para agregar un nuevo campo de teléfono
+        function agregarTelefono(containerId) {
+            const telefonosDiv = document.getElementById(containerId);
+            const nuevoTelefono = document.createElement('input');
+            nuevoTelefono.type = 'text';
+            nuevoTelefono.className = 'telefono';
+            nuevoTelefono.placeholder = 'Ingrese teléfono ' + (telefonosDiv.children.length + 1);
+            nuevoTelefono.required = true;
+            telefonosDiv.appendChild(nuevoTelefono);
+        }
+
+        // Función para agregar un nuevo campo de dirección
+        function agregarDireccion(containerId) {
+            const direccionesDiv = document.getElementById(containerId);
+            const nuevaDireccion = document.createElement('input');
+            nuevaDireccion.type = 'text';
+            nuevaDireccion.className = 'direccion';
+            nuevaDireccion.placeholder = 'Ingrese dirección ' + (direccionesDiv.children.length + 1);
+            nuevaDireccion.required = true;
+            direccionesDiv.appendChild(nuevaDireccion);
+        }
+    </script>
+</body>
+</html>

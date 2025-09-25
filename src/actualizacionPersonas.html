@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendas Jumi - Actualización de datos de personas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="rendererAP.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registroPersonas.html">Registro de Personas</a></li>
+                <li><a href="actualizacionPersonas.html" class="active">Actualización de datos de personas</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <h1>Actualización de Datos de Personas</h1>
+
+            <label for="dniBuscar">Buscar por DNI:</label>
+            <input type="text" id="dniBuscar" placeholder="Ingrese DNI" required>
+            <button id="buscarButton" type="button">Buscar</button>
+
+            <div id="resultadoBusqueda" class="hidden">
+                <h2>Resultados de Búsqueda</h2>
+                <div id="datosPersona"></div>
+                
+                <h3>Teléfonos</h3>
+                <div id="telefonosPersona">
+                    <input type="text" class="telefono" placeholder="Ingrese teléfono 1" required>
+                </div>
+                <button type="button" id="agregarTelefono">Agregar otro teléfono</button>
+
+                <h3>Direcciones</h3>
+                <div id="direccionesPersona">
+                    <input type="text" class="direccion" placeholder="Ingrese dirección 1" required>
+                </div>
+                <button type="button" id="agregarDireccion">Agregar otra dirección</button>
+
+                <h3>Detalles Específicos</h3>
+                <div id="detallesEspecificos" class="hidden">
+                    <div id="empleadoSupervisorCampos" class="hidden">
+                        <label for="salarioSupervisor">Salario:</label>
+                        <input type="text" id="salarioSupervisor" placeholder="Ingrese salario">
+                        <label for="areaDeSupervision">Área de Supervisión:</label>
+                        <input type="text" id="areaDeSupervision" placeholder="Ingrese área de supervisión">
+                    </div>
+                    <div id="empleadoVendedorCampos" class="hidden">
+                        <label for="salarioVendedor">Salario:</label>
+                        <input type="text" id="salarioVendedor" placeholder="Ingrese salario">
+                        <label for="comisionVendedor">Comisión:</label>
+                        <input type="text" id="comisionVendedor" placeholder="Ingrese comisión">
+                        <label for="dniSupervisorVendedor">DNI del Supervisor:</label>
+                        <input type="text" id="dniSupervisorVendedor" placeholder="Ingrese DNI del supervisor">
+                    </div>
+                </div>
+
+                <button id="actualizarButton" type="button" class="hidden">Actualizar</button>
+            </div>
+
+            <div id="error" class="error"></div>
+        </main>
+    </div>
+</body>
+</html>

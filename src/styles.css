@@ -1,0 +1,173 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Diseño General */
+body {
+    display: flex;
+    background-color: #6E0000;
+    color: #fff;
+    min-height: 100vh;
+    flex-direction: column; /* Cambiado a columna para que el contenido se apile verticalmente */
+}
+
+/* Contenedor Principal */
+.container {
+    display: flex; /* Usar flexbox para alinear la barra lateral y el contenido */
+    width: 100%; /* Asegurarse de que el contenedor principal ocupe todo el ancho */
+    flex-direction: row;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 270px; /* Ancho fijo para la barra lateral */
+    background: linear-gradient(180deg, #B22222, #8B0000);
+    height: 100vh; /* Altura completa de la ventana */
+    padding: 25px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 15px; /* Reducir el margen inferior */
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 5px 0; /* Reducir el margen entre botones */
+}
+
+/* Estilos para los enlaces */
+.sidebar ul li a {
+    color: #FFFFFF; /* Color blanco para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    display: block; /* Para que el área clickeable sea todo el bloque */
+    padding: 10px; /* Ajustar el padding para que no sea demasiado grande */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Efecto hover para los enlaces */
+.sidebar ul li a:hover {
+    color: #FFDDDD; /* Color más claro al pasar el mouse */
+    background-color: rgba(255, 0, 0, 0.7); /* Fondo al pasar el mouse */
+}
+
+/* Estilo para la sección activa */
+.sidebar ul li.active a {
+    background-color: #FF0000; /* Fondo rojo para la sección activa */
+    color: #FFFFFF; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.content {
+    flex: 1; /* Ocupa el espacio restante */
+    display: flex;
+    flex-direction: column; /* Asegúrate de que los elementos se apilen verticalmente */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    background-color: #850000;
+    height: 100vh; /* Ajustar la altura para que no se corte */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical */
+}
+
+.content h1 {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 20px 0; /* Espacio arriba y abajo del título */
+}
+
+h2 {
+    text-align: center; /* Centra los títulos de las secciones */
+    margin: 20px 0; /* Espacio arriba y abajo del título */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos para los campos de entrada y selectores */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%; /* Hacer que los campos ocupen todo el ancho disponible */
+    padding: 12px; /* Aumentar el padding para mayor comodidad */
+    margin: 10px 0; /* Espacio entre los campos */
+    border: 2px solid #FF0000; /* Borde rojo para que coincida con la paleta de colores */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Aumentar el tamaño de la fuente */
+    color: #FFFFFF; /* Color del texto */
+    background-color: #850000; /* Fondo oscuro para los campos */
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
+}
+
+button {
+    padding: 12px; /* Aumentar el padding para mayor comodidad */
+    margin: 10px 0; /* Espacio entre los campos */
+    border: 2px solid #FF0000; /* Borde rojo para que coincida con la paleta de colores */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Aumentar el tamaño de la fuente */
+    color: #FFFFFF; /* Color del texto */
+    background-color: #850000; /* Fondo oscuro para los campos */
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    font-weight: bold; /* Texto en negrita */
+    display: block; 
+    width: 100%;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+button:hover {
+    background-color: #FF3333; /* Color más claro al pasar el mouse */
+}
+
+/* Efecto al enfocar los campos de entrada y selectores */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #FFDDDD; /* Cambiar el color del borde al enfocar */
+    outline: none; /* Eliminar el contorno predeterminado */
+}
+
+#registrarButton {
+    display: inline-block; /* Cambia a inline-block para que no ocupe todo el ancho */
+    padding: 12px 20px; /* Ajusta el padding para un mejor tamaño */
+    margin: 10px 0; /* Agrega margen para separar del contenido */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    color: #FFFFFF; /* Color del texto */
+    background-color: #FF0000; /* Fondo rojo para el botón */
+    border: 2px solid #FF0000; /* Borde rojo */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+#registrarButton:hover {
+    background-color: #FF3333; /* Color más claro al pasar el mouse */
+}
+
+.error {
+    color: red;
+    margin: 10px 0;
+}
+
+.success {
+    color: green;
+    margin: 10px 0;
+}
